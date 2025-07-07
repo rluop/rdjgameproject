@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bki1ibpnbbged"]
+
+[ext_resource type="Texture2D" uid="uid://c6cs3ffmu3167" path="res://danieltwomad.png" id="1_a202f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0tk4"]
+atlas = ExtResource("1_a202f")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a202f"]
+size = Vector3(40, 2, 40)
+
+[sub_resource type="BoxMesh" id="BoxMesh_noarx"]
+size = Vector3(40, 2, 40)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.87232, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("BoxShape3D_noarx")
+
+[node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D"]
+texture = SubResource("AtlasTexture_a0tk4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_a202f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_noarx")
