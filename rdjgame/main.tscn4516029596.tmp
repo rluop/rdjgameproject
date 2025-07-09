@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cpqukfj6mepqu"]
+[gd_scene load_steps=6 format=4 uid="uid://cpqukfj6mepqu"]
 
 [ext_resource type="Texture2D" uid="uid://drbcwbsilipfj" path="res://grassanddirttilesheet.png" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://ctmtpp4emkmqs" path="res://playerScript.gd" id="2_h2yge"]
@@ -148,9 +148,6 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_0xm2m")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
-size = Vector2(32, 32)
-
 [node name="Main" type="Node2D"]
 
 [node name="TileMap" type="Node2D" parent="."]
@@ -168,8 +165,6 @@ script = ExtResource("2_h2yge")
 position = Vector2(16, 16)
 texture = ExtResource("3_1bvp3")
 
-[node name="Camera2D" type="Camera2D" parent="Player/CharacterBody2D/Sprite2D"]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody2D"]
-position = Vector2(16, 16)
-shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Camera2D" type="Camera2D" parent="Player/CharacterBody2D"]
